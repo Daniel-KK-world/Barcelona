@@ -53,6 +53,7 @@ This project is a responsive and visually appealing **FC Barcelona website**, de
 ### Prerequisites
 - A modern web browser
 - Basic knowledge of HTML and CSS
+- Bootstrap 
 
 ### Steps to Run
 1. Clone this repository:
