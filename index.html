@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FC Barcelona</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #2e0661; /* Dark Blue background for the whole page */
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar {
+      background-color: #110027; /* Dark Blue for the navbar */
+    }
+
+    .navbar a {
+      color: white !important;
+    }
+
+  .dropdown-menu {
+      background-color: #110027; /* Lighter blue for dropdown */
+      display: flex;                   /* Use flexbox for layout */
+      justify-content: space-between;  /* Space between the two sections */
+      display: hidden;
+    }
+
+    .search-icon i{
+      color: rgb(7, 180, 21);
+      font-size: 2.5rem;
+      padding-left: 30px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: rgb(54, 112, 28) !important;
+    }
+
+    .nav-link:hover {
+      color: #ffcc00 !important; /* Golden color on hover for links */
+    }
+    .barca-logo{
+      height: 70px; /* Adjust size */
+      width: auto;
+      padding-right: 30px;    
+    }
+
+    .dropdown-section{
+      width: 48%;
+    }
+    .dropdown-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .dropdown-menu {
+      display: none;
+      flex-direction: row;
+      padding: 10px;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-section {
+      width: 48%;
+      padding: 0 10px;
+    }
+
+    .dropdown-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .dropdown-menu .dropdown-item {
+      color: white; /* White text color for visibility */
+      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+    }
+    
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #0056b3; /* Lighter blue for hover */
+      color: white; /* Ensure text stays white on hover */
+    }
+    /* Show dropdown menu on hover */
+  .nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Show the menu */
+  margin-top: 0; /* Align properly */
+  animation: fadeIn 0.3s ease-in-out; /* Optional: Smooth appearance */
+
+
+    }
+ /* Hero Section Styling */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomEffect 10s infinite alternate ease-in-out;
+}
+
+/* Hero Text Styling */
+.hero-text {
+  position: absolute;
+  top: 85%;
+  left: 19%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 6rem; /* Very large text */
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 2.5rem; /* Slightly smaller than h1 */
+  margin-top: 1rem;
+}
+
+/* Animation for the Image */
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+
+/* Cards */
+.hero-cards-container{
+  max-width: 100%;
+  align-items: center;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-top: -30px;
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  background-color: #110027
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+
+.card-text {
+  color: #ffffff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  }
+
+  .news-cards .card {
+    max-width: 300px;
+  }
+  
+  .news-cards .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .news-cards .card-text {
+    font-size: 0.9rem;
+    color: #ffc8c8;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  }
+  
+  </style>
+</head>
+<body>
+ 
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <img src="images/barcelona-fc-logo-blue-background-900x900.jpeg" alt="FC Barcelona Logo" class="barca-logo" height="50">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Navigation -->
+      <ul class="navbar-nav me-auto">
+        <!-- Dropdown for First Team -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="firstTeamDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FIRST TEAM</a>
+          <ul class="dropdown-menu" aria-labelledby="firstTeamDropdown">
+            <div class="d-flex">
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item text-warning" href="#">Latest</a></li>
+                <li><a class="dropdown-item" href="#">Schedule</a></li>
+                <li><a class="dropdown-item" href="#">Tickets</a></li>
+                <li><a class="dropdown-item" href="#">Results</a></li>
+                <li><a class="dropdown-item" href="#">Standings</a></li>
+              </div>
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">Players</a></li>
+                <li><a class="dropdown-item" href="#">Honours</a></li>
+                <li><a class="dropdown-item" href="#">Photos</a></li>
+                <li><a class="dropdown-item" href="#">Features</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Club -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="clubDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">CLUB</a>
+          <ul class="dropdown-menu" aria-labelledby="clubDropdown">
+            <div class="d-flex">
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">Cat Culer</a></li>
+                <li><a class="dropdown-item" href="#">Latest</a></li>
+                <li><a class="dropdown-item" href="#">Scheduler</a></li>
+                <li><a class="dropdown-item" href="#">Organisation</a></li>
+                <li><a class="dropdown-item" href="#">Identify</a></li>
+                <li><a class="dropdown-item" href="#">History</a></li>
+                <li><a class="dropdown-item" href="#">Foundation</a></li>
+                <li><a class="dropdown-item" href="#">Documentation center</a></li>
+                <li><a class="dropdown-item" href="#">Revista Barca</a></li>
+                <li><a class="dropdown-item" href="#">Sustainability</a></li>
+              </div>
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">La Masia</a></li>
+                <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                <li><a class="dropdown-item" href="#">Barca Innovation Hub</a></li>
+                <li><a class="dropdown-item" href="#">Transparency & compliance</a></li>
+                <li><a class="dropdown-item" href="#">Press</a></li>
+                <li><a class="dropdown-item" href="#">Members</a></li>
+                <li><a class="dropdown-item" href="#">Partners</a></li>
+                <li><a class="dropdown-item" href="#">Child Safeguarding system</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Espai Barca -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="espaiBarcaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ESPAI BARCA</a>
+          <ul class="dropdown-menu" aria-labelledby="espaiBarcaDropdown">
+            <div class="d-flex">
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">New Stadium</a></li>
+                <li><a class="dropdown-item" href="#">Events</a></li>
+              </div>
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">Construction Updates</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Barca Teams -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="barcaTeamsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">BARCA TEAMS</a>
+          <ul class="dropdown-menu" aria-labelledby="barcaTeamsDropdown">
+            <div class="d-flex">
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">Men's Team</a></li>
+                <li><a class="dropdown-item" href="#">Barca Athletic</a></li>
+                <li><a class="dropdown-item" href="#">First Team</a></li>
+                <li><a class="dropdown-item" href="#">Barca Legends</a></li>
+                <li><a class="dropdown-item" href="#">Youth team</a></li>
+                
+              </div>
+              <div class="dropdown-section">
+                <h6 class="dropdown-header"></h6>
+                <li><a class="dropdown-item" href="#">Women's Team</a></li>
+                <li><a class="dropdown-item" href="#">FC Barcelona U19A</a></li>
+                <li><a class="dropdown-item" href="#">Basketball</a></li>
+                <li><a class="dropdown-item" href="#">Handball</a></li>
+                <li><a class="dropdown-item" href="#">Volleyblall</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right Navigation with Tickets, Museum, and Search -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">TICKETS & MUSEUM</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">SHOP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">BARCA ONE</a></li>
+        <li class="nav-item">
+          <a class="nav-link search-icon " href="#"><i class="fas fa-search"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main>
+
+  <section class="hero-section">
+    <div class="hero-image-container">
+      <img src="images\2408_Tour_Ciutat_Esportiva_Web_Hero_3200x2000_02_ENG.webp" alt="raphina and" class="hero-image">
+      <div class="hero-text">
+        <h1 class="display-1 fw-bold text-uppercase text-shadow">Fc Barcelona</h1>
+        <p class="lead text-shadow">Mes que un club</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- News Cards Section -->
+  <section class="news-cards my-5">
+    <div class="hero-cards-container">
+      <div class="row g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow">
+            <img src="images\flick\flick2.webp" class="card-img-top" alt="Coach Image">
+            <div class="card-body">
+              <h3 class="card-title fw-bold font-serif">Hansi Flick Says More to come</h3>
+              <p class="card-text font-sans-serif">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque quia velit praesentium necessitatibus ex ducimus</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow">
+            <img src="images\news-feed\supercup2.webp" class="card-img-top" alt="Players Image">
+            <div class="card-body">
+              <h3 class="card-title fw-bold font-serif">Spanish Super Cup 2025</h3>
+              <p class="card-text">It’s a wrap
+                Sports City is treated to an attacking football exhibition as Barcelona come away with the 2025 Spanish Super Cup.
+                .</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center shadow">
+            <img src="images\players\balde-yamal2.jpg" class="card-img-top" alt="Match News Image">
+            <div class="card-body">
+              <h3 class="card-title">Two times now</h3>
+              <p class="card-text">That's two times now this season that Real Madrid have fallen short to barcelona. Still a looming posibility that the two meet again his season apart from the return leg at the Camp Nou.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+</main>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
