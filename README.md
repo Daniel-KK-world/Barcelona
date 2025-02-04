@@ -3,6 +3,7 @@ A responsive FC Barcelona website with a dynamic header, interactive hero sectio
 
 
 https://github.com/user-attachments/assets/b1fa99b4-7d13-4075-9d8e-15741e204ff4
+
 This project is a responsive and visually appealing **FC Barcelona website**, designed using **Bootstrap** and custom CSS. It features a dynamic header, an interactive hero section, and a news section with cards for the latest updates on the coach, players, and matches.
 
 
