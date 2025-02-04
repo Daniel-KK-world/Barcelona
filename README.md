@@ -1,7 +1,5 @@
-This project is a responsive and visually appealing **FC Barcelona website**, designed using **Bootstrap** and custom CSS. It features a dynamic header, an interactive hero section, and a news section with cards for the latest updates on the coach, players, and matches.
-
 # FC Barcelona Website Project
-
+This project is a responsive and visually appealing **FC Barcelona website**, designed using **Bootstrap** and custom CSS. It features a dynamic header, an interactive hero section, and a news section with cards for the latest updates on the coach, players, and matches.
 
 
 
