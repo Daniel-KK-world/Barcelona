@@ -59,7 +59,7 @@ This project is a responsive and visually appealing **FC Barcelona website**, de
 ### Steps to Run
 1. Clone this repository:
    ```bash
-   Navigate to the project folder:
+   git clone 
 bash
 
 2.Open index.html in your preferred browser.
